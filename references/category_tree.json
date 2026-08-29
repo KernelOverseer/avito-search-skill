@@ -1,0 +1,2087 @@
+{
+ "_meta": {
+  "source": "https://services.avito.ma/api/v2/config/listing/tree",
+  "note": "searchSlug = path segment for /fr/maroc/<searchSlug>. adType: sell|let|co_rent|vac_rent|all. Captured 2026-08-29.",
+  "verticals": [
+   "7100 Avito Market",
+   "2000 Avito Véhicules",
+   "1000 Avito Immobilier",
+   "6000 Avito Entreprise"
+  ]
+ },
+ "tree": [
+  {
+   "id": "7100",
+   "name": "Avito Market",
+   "adType": "all",
+   "searchSlug": "market",
+   "tracking": "avito_market",
+   "children": [
+    {
+     "id": "5000",
+     "name": "Informatique, Multimedia et Gadgets",
+     "adType": "sell",
+     "searchSlug": "informatique_et_multimedia-à_vendre",
+     "tracking": "informatique_multimedia_et_gadgets",
+     "children": [
+      {
+       "id": "5010",
+       "name": "Smartphone et Téléphone",
+       "adType": "sell",
+       "searchSlug": "téléphones-à_vendre",
+       "tracking": "smartphone_et_telephone"
+      },
+      {
+       "id": "5080",
+       "name": "Tablettes et  E-book",
+       "adType": "sell",
+       "searchSlug": "tablettes-à_vendre",
+       "tracking": "tablettes_et_e_book"
+      },
+      {
+       "id": "5030",
+       "name": "Ordinateurs portables",
+       "adType": "sell",
+       "searchSlug": "ordinateurs_portables-à_vendre",
+       "tracking": "ordinateurs_portables"
+      },
+      {
+       "id": "5050",
+       "name": "Ordinateurs de bureau",
+       "adType": "sell",
+       "searchSlug": "ordinateurs_bureau-à_vendre",
+       "tracking": "ordinateurs_de_bureau"
+      },
+      {
+       "id": "5040",
+       "name": "Gaming",
+       "adType": "sell",
+       "searchSlug": "jeux_vidéo_et_consoles-à_vendre",
+       "tracking": "gaming"
+      },
+      {
+       "id": "5091",
+       "name": "Gadgets",
+       "adType": "sell",
+       "searchSlug": "gadgets-à_vendre",
+       "tracking": "gadgets"
+      },
+      {
+       "id": "5093",
+       "name": "Imprimantes",
+       "adType": "sell",
+       "searchSlug": "imprimantes-à_vendre",
+       "tracking": "imprimantes"
+      },
+      {
+       "id": "5090",
+       "name": "Télévisions",
+       "adType": "sell",
+       "searchSlug": "télévisions-à_vendre",
+       "tracking": "televisions"
+      },
+      {
+       "id": "5070",
+       "name": "Photo-Video",
+       "adType": "sell",
+       "searchSlug": "appareils_photo_cameras-à_vendre",
+       "tracking": "photo_video"
+      },
+      {
+       "id": "5020",
+       "name": "Audio et Hi-Fi",
+       "adType": "sell",
+       "searchSlug": "image_et_son-à_vendre",
+       "tracking": "audio_et_hi_Fi"
+      },
+      {
+       "id": "5092",
+       "name": "Comptes et Abonnements",
+       "adType": "sell",
+       "searchSlug": "comptes_et_abonnements-à_vendre",
+       "tracking": "comptes_et_abonnements"
+      },
+      {
+       "id": "5060",
+       "name": "Accessoires Informatiques",
+       "adType": "sell",
+       "searchSlug": "accessoires_informatique_et_gadgets-à_vendre",
+       "tracking": "accessoires_informatiques"
+      },
+      {
+       "id": "5095",
+       "name": "Autres Matériels Electroniques",
+       "adType": "sell",
+       "searchSlug": "autres_materiels_electroniques-à_vendre",
+       "tracking": "autres_materiels_electroniques"
+      }
+     ]
+    },
+    {
+     "id": "3130",
+     "name": "Equipement pour Bébé et Enfant",
+     "adType": "sell",
+     "searchSlug": "equipements_pour_enfant-à_vendre",
+     "tracking": "equipement_pour_bebe_et_enfant",
+     "children": [
+      {
+       "id": "3131",
+       "name": "Promenade",
+       "adType": "sell",
+       "searchSlug": "promenade-à_vendre",
+       "tracking": "promenade"
+      },
+      {
+       "id": "3132",
+       "name": "Chambre",
+       "adType": "sell",
+       "searchSlug": "chambre-à_vendre",
+       "tracking": "chambre"
+      },
+      {
+       "id": "3133",
+       "name": "Accessoires Repas",
+       "adType": "sell",
+       "searchSlug": "accessoires_repas-à_vendre",
+       "tracking": "accessoires_repas"
+      },
+      {
+       "id": "3134",
+       "name": "Jouets",
+       "adType": "sell",
+       "searchSlug": "jouets-à_vendre",
+       "tracking": "jouets"
+      },
+      {
+       "id": "3135",
+       "name": "Bain",
+       "adType": "sell",
+       "searchSlug": "bain-à_vendre",
+       "tracking": "bain"
+      },
+      {
+       "id": "3139",
+       "name": "Autre équipement pour Bébé et Enfant",
+       "adType": "sell",
+       "searchSlug": "autre_equipement_pour_bebe_et_enfant-à_vendre",
+       "tracking": "autre_equipement_pour_bebe_et_enfant"
+      }
+     ]
+    },
+    {
+     "id": "3000",
+     "name": "Maison et Jardin",
+     "adType": "sell",
+     "searchSlug": "pour_la_maision_et_jardin-à_vendre",
+     "tracking": "maison_et_jardin",
+     "children": [
+      {
+       "id": "3011",
+       "name": "Petit Electroménager",
+       "adType": "sell",
+       "searchSlug": "petit_electromenager-à_vendre",
+       "tracking": "petit_electromenager"
+      },
+      {
+       "id": "3012",
+       "name": "Grand Electroménager",
+       "adType": "sell",
+       "searchSlug": "grand_electromenager-à_vendre",
+       "tracking": "grand_electromenager"
+      },
+      {
+       "id": "3013",
+       "name": "Confort de la maison",
+       "adType": "sell",
+       "searchSlug": "confort_de_la_maison-à_vendre",
+       "tracking": "confort_de_la_maison"
+      },
+      {
+       "id": "3014",
+       "name": "Vaisselles",
+       "adType": "sell",
+       "searchSlug": "vaisselles-à_vendre",
+       "tracking": "vaisselles"
+      },
+      {
+       "id": "3021",
+       "name": "Meuble",
+       "adType": "sell",
+       "searchSlug": "meubles-à_vendre",
+       "tracking": "meuble"
+      },
+      {
+       "id": "3022",
+       "name": "Décoration ",
+       "adType": "sell",
+       "searchSlug": "decoration-à_vendre",
+       "tracking": "decoration"
+      },
+      {
+       "id": "3023",
+       "name": "Textile",
+       "adType": "sell",
+       "searchSlug": "textile-à_vendre",
+       "tracking": "textile"
+      },
+      {
+       "id": "3024",
+       "name": "Tapis",
+       "adType": "sell",
+       "searchSlug": "tapis-à_vendre",
+       "tracking": "tapis"
+      },
+      {
+       "id": "3025",
+       "name": "Porte et Fenêtre",
+       "adType": "sell",
+       "searchSlug": "porte_et_fenetre-à_vendre",
+       "tracking": "porte_et_fenetre"
+      },
+      {
+       "id": "3041",
+       "name": "Jardin",
+       "adType": "sell",
+       "searchSlug": "jardin-à_vendre",
+       "tracking": "jardin"
+      },
+      {
+       "id": "3042",
+       "name": "Bricolage",
+       "adType": "sell",
+       "searchSlug": "bricolage-à_vendre",
+       "tracking": "bricolage"
+      },
+      {
+       "id": "3043",
+       "name": "Sanitaire",
+       "adType": "sell",
+       "searchSlug": "sanitaire-à_vendre",
+       "tracking": "sanitaire"
+      }
+     ]
+    },
+    {
+     "id": "4030",
+     "name": "Animalerie",
+     "adType": "sell",
+     "searchSlug": "animaux-à_vendre",
+     "tracking": "animalerie",
+     "children": [
+      {
+       "id": "4031",
+       "name": "Animaux Domestique",
+       "adType": "sell",
+       "searchSlug": "animaux_domestique-à_vendre",
+       "tracking": "animaux_domestique"
+      },
+      {
+       "id": "4032",
+       "name": "Animaux De Ferme",
+       "adType": "sell",
+       "searchSlug": "animaux_de_ferme-à_vendre",
+       "tracking": "animaux_de_ferme"
+      },
+      {
+       "id": "4033",
+       "name": "Services pour animaux",
+       "adType": "sell",
+       "searchSlug": "services_pour_animaux-à_vendre",
+       "tracking": "services_pour_animaux"
+      },
+      {
+       "id": "4034",
+       "name": "Accessoires pour animaux",
+       "adType": "sell",
+       "searchSlug": "accessoires_pour_animaux-à_vendre",
+       "tracking": "accessoires_pour_animaux"
+      },
+      {
+       "id": "4035",
+       "name": "Alimentation pour animaux",
+       "adType": "sell",
+       "searchSlug": "alimentation_pour_animaux-à_vendre",
+       "tracking": "alimentation_pour_animaux"
+      }
+     ]
+    },
+    {
+     "id": "4070",
+     "name": "Instruments de musique",
+     "adType": "sell",
+     "searchSlug": "instruments_de_musique-à_vendre",
+     "tracking": "instruments_de_musique",
+     "children": [
+      {
+       "id": "4071",
+       "name": "Cordes",
+       "adType": "sell",
+       "searchSlug": "cordes-à_vendre",
+       "tracking": "cordes"
+      },
+      {
+       "id": "4072",
+       "name": "Piano",
+       "adType": "sell",
+       "searchSlug": "piano-à_vendre",
+       "tracking": "piano"
+      },
+      {
+       "id": "4073",
+       "name": "Vent",
+       "adType": "sell",
+       "searchSlug": "vent-à_vendre",
+       "tracking": "vent"
+      },
+      {
+       "id": "4074",
+       "name": "Percussions",
+       "adType": "sell",
+       "searchSlug": "percussions-à_vendre",
+       "tracking": "percussions"
+      },
+      {
+       "id": "4075",
+       "name": "Accessoires",
+       "adType": "sell",
+       "searchSlug": "accessoires-à_vendre",
+       "tracking": "accessoires"
+      },
+      {
+       "id": "4079",
+       "name": "Autres instruments",
+       "adType": "sell",
+       "searchSlug": "autres_instruments-à_vendre",
+       "tracking": "autres_instruments"
+      }
+     ]
+    },
+    {
+     "id": "4000",
+     "name": "Loisirs et Divertissements",
+     "adType": "sell",
+     "searchSlug": "loisirs_et_divertissement-à_vendre",
+     "tracking": "loisirs_et_divertissements",
+     "children": [
+      {
+       "id": "4060",
+       "name": "Arts et collections",
+       "adType": "sell",
+       "searchSlug": "art_et_collections-à_vendre",
+       "tracking": "arts_et_collections"
+      },
+      {
+       "id": "4040",
+       "name": "Films, livres, magazines",
+       "adType": "sell",
+       "searchSlug": "films_livres_magazines-à_vendre",
+       "tracking": "films_livres_magazines"
+      },
+      {
+       "id": "4065",
+       "name": "Couture, Crochet, Tricottage",
+       "adType": "sell",
+       "searchSlug": "couture_crochet_tricottage-à_vendre",
+       "tracking": "couture_crochet_tricottage"
+      },
+      {
+       "id": "4050",
+       "name": "Voyages et billetterie",
+       "adType": "sell",
+       "searchSlug": "voyage_et_billetterie-à_vendre",
+       "tracking": "voyages_et_billetterie"
+      },
+      {
+       "id": "4095",
+       "name": "Autres loisirs",
+       "adType": "sell",
+       "searchSlug": "autres_loisirs-à_vendre",
+       "tracking": "autres_loisirs"
+      }
+     ]
+    },
+    {
+     "id": "8000",
+     "name": "Habillement et Mode",
+     "adType": "sell",
+     "searchSlug": "habillement_et_bien_etre-à_vendre",
+     "tracking": "habillement_et_mode",
+     "children": [
+      {
+       "id": "3050",
+       "name": "Vêtements",
+       "adType": "sell",
+       "searchSlug": "vetements-à_vendre",
+       "tracking": "Vetements"
+      },
+      {
+       "id": "3030",
+       "name": "Vêtements pour enfant et bébé",
+       "adType": "sell",
+       "searchSlug": "vetements_pour_enfant-à_vendre",
+       "tracking": "vetements_pour_enfant_et_bebe"
+      },
+      {
+       "id": "3150",
+       "name": "Chaussures",
+       "adType": "sell",
+       "searchSlug": "chaussures-à_vendre",
+       "tracking": "chaussures"
+      },
+      {
+       "id": "3060",
+       "name": "Sacs et accessoires",
+       "adType": "sell",
+       "searchSlug": "sacs_et_accessoires-à_vendre",
+       "tracking": "sacs_et_accessoires"
+      },
+      {
+       "id": "3160",
+       "name": "Montres et bijoux",
+       "adType": "sell",
+       "searchSlug": "montres_et_bijoux-à_vendre",
+       "tracking": "montres_et_bijoux"
+      },
+      {
+       "id": "3190",
+       "name": "Autres accessoires de mode",
+       "adType": "sell",
+       "searchSlug": "autres_accessoires_de_mode-à_vendre",
+       "tracking": "autres_accessoires_de_mode"
+      }
+     ]
+    },
+    {
+     "id": "3900",
+     "name": "Bien être et Sport",
+     "adType": "sell",
+     "searchSlug": "bien_etre_et_sport-à_vendre",
+     "tracking": "bien_etre_et_sport",
+     "children": [
+      {
+       "id": "3070",
+       "name": "Produits de beauté",
+       "adType": "sell",
+       "searchSlug": "produits_de_beaute-à_vendre",
+       "tracking": "produits_de_beaute"
+      },
+      {
+       "id": "3901",
+       "name": "Produits de terroir",
+       "adType": "sell",
+       "searchSlug": "produits_de_terroir-à_vendre",
+       "tracking": "produits_de_terroir"
+      },
+      {
+       "id": "4010",
+       "name": "Equipement Sportif",
+       "adType": "sell",
+       "searchSlug": "sports_et_loisirs-à_vendre",
+       "tracking": "equipement_sportif"
+      },
+      {
+       "id": "3902",
+       "name": "Complément Alimentaires",
+       "adType": "sell",
+       "searchSlug": "complement_alimentaires-à_vendre",
+       "tracking": "complement_alimentaires"
+      },
+      {
+       "id": "3903",
+       "name": "Alimentation Générale",
+       "adType": "sell",
+       "searchSlug": "alimentation_generale-à_vendre",
+       "tracking": "alimentation_generale"
+      }
+     ]
+    },
+    {
+     "id": "6090",
+     "name": "Matériels Professionnels",
+     "adType": "sell",
+     "searchSlug": "matériels_professionnels-à_vendre",
+     "tracking": "materiels_professionnels",
+     "children": [
+      {
+       "id": "6091",
+       "name": "Matériel de Bureau",
+       "adType": "sell",
+       "searchSlug": "materiel_de_bureau-à_vendre",
+       "tracking": "materiel_de_bureau"
+      },
+      {
+       "id": "6092",
+       "name": "Restauration et Hôtellerie",
+       "adType": "sell",
+       "searchSlug": "restauration_et_hotellerie-à_vendre",
+       "tracking": "restauration_et_hotellerie"
+      },
+      {
+       "id": "6093",
+       "name": "Matériel et Matière BTP",
+       "adType": "sell",
+       "searchSlug": "materiel_et_matiere_btp-à_vendre",
+       "tracking": "materiel_et_matiere_btp"
+      },
+      {
+       "id": "6094",
+       "name": "Matériel Médical",
+       "adType": "sell",
+       "searchSlug": "materiel_medical-à_vendre",
+       "tracking": "materiel_medical"
+      },
+      {
+       "id": "6095",
+       "name": "Matériel Agricole",
+       "adType": "sell",
+       "searchSlug": "materiel_agricole-à_vendre",
+       "tracking": "materiel_agricole"
+      },
+      {
+       "id": "6096",
+       "name": "Matériel pour école, garderie et espace de jeux",
+       "adType": "sell",
+       "searchSlug": "materiel_pour_ecole_garderie_et_espace_de_jeux-à_vendre",
+       "tracking": "materiel_pour_ecole_garderie_et_espace_de_jeux"
+      },
+      {
+       "id": "6099",
+       "name": "Autre Matériel professionel",
+       "adType": "sell",
+       "searchSlug": "autre_materiel_professionel-à_vendre",
+       "tracking": "autre_materiel_professionel"
+      }
+     ]
+    },
+    {
+     "id": "6120",
+     "name": "Stocks et vente en gros",
+     "adType": "sell",
+     "searchSlug": "stocks_et_vente_en_gros-à_vendre",
+     "tracking": "stocks_et_vente_en_gros"
+    },
+    {
+     "id": "7900",
+     "name": "Enchères Publiques",
+     "adType": "sell",
+     "searchSlug": "enchères_publiques-à_vendre",
+     "tracking": "encheres_publiques",
+     "children": [
+      {
+       "id": "7910",
+       "name": "Véhicules",
+       "adType": "sell",
+       "searchSlug": "enchères_publiques_véhicules-à_vendre",
+       "tracking": "vehicules"
+      },
+      {
+       "id": "7920",
+       "name": "Immobilier",
+       "adType": "sell",
+       "searchSlug": "enchères_publiques_immobilier-à_vendre",
+       "tracking": "immobilier"
+      },
+      {
+       "id": "7930",
+       "name": "Divers",
+       "adType": "sell",
+       "searchSlug": "enchères_publiques_divers-à_vendre",
+       "tracking": "divers"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2000",
+   "name": "Avito Véhicules",
+   "adType": "all",
+   "searchSlug": "véhicules",
+   "tracking": "avito_vehicules",
+   "children": [
+    {
+     "id": "2100",
+     "name": "Voitures",
+     "adType": "all",
+     "searchSlug": "voitures",
+     "tracking": "voitures",
+     "children": [
+      {
+       "id": "2010",
+       "name": "Voitures d'occasion",
+       "adType": "sell",
+       "searchSlug": "voitures_d_occasion-à_vendre",
+       "tracking": "voitures_d_occasion"
+      },
+      {
+       "id": "2020",
+       "name": "Voitures de location",
+       "adType": "let",
+       "searchSlug": "location_de_voitures-à_louer",
+       "tracking": "voitures_de_location"
+      },
+      {
+       "id": "2025",
+       "name": "Voitures de Leasing",
+       "adType": "let",
+       "searchSlug": "voitures_de_leasing-à_louer",
+       "tracking": "voitures_de_leasing"
+      }
+     ]
+    },
+    {
+     "id": "2030",
+     "name": "Motos",
+     "adType": "sell",
+     "searchSlug": "motos-à_vendre",
+     "tracking": "motos"
+    },
+    {
+     "id": "2060",
+     "name": "Vélos",
+     "adType": "sell",
+     "searchSlug": "vélos-à_vendre",
+     "tracking": "vélos"
+    },
+    {
+     "id": "2040",
+     "name": "Pièces et accessoires pour véhicules",
+     "adType": "sell",
+     "searchSlug": "pièces_et_accessoires_véhicules-à_vendre",
+     "tracking": "pieces_et_accessoires_pour_vehicules"
+    },
+    {
+     "id": "2070",
+     "name": "Camions et Engins",
+     "adType": "all",
+     "searchSlug": "camions_et_engins",
+     "tracking": "camions_et_engins",
+     "children": [
+      {
+       "id": "2078",
+       "name": "Camions",
+       "adType": "all",
+       "searchSlug": "camions",
+       "tracking": "camions"
+      },
+      {
+       "id": "2072",
+       "name": "Remorques et caravanes",
+       "adType": "all",
+       "searchSlug": "remorques_et_caravans",
+       "tracking": "remorques_et_caravanes"
+      },
+      {
+       "id": "2071",
+       "name": "Fourgon et Minibus",
+       "adType": "all",
+       "searchSlug": "fourgon_et_minibus",
+       "tracking": "fourgon_et_minibus"
+      },
+      {
+       "id": "2074",
+       "name": "Véhicules Frigorifiques",
+       "adType": "all",
+       "searchSlug": "vehicules_frigorifiques",
+       "tracking": "vehicules_frigorifiques"
+      },
+      {
+       "id": "2075",
+       "name": "Engins BTP",
+       "adType": "all",
+       "searchSlug": "engins_btp",
+       "tracking": "engins_btp"
+      },
+      {
+       "id": "2073",
+       "name": "Engins agricoles",
+       "adType": "all",
+       "searchSlug": "engins_agricole",
+       "tracking": "engins_agricoles"
+      }
+     ]
+    },
+    {
+     "id": "2050",
+     "name": "Bateaux",
+     "adType": "sell",
+     "searchSlug": "bateaux-à_vendre",
+     "tracking": "bateaux"
+    },
+    {
+     "id": "2081",
+     "name": "Autres véhicules",
+     "adType": "sell",
+     "searchSlug": "véhicules_autres-à_vendre",
+     "tracking": "autres_vehicules"
+    }
+   ]
+  },
+  {
+   "id": "1000",
+   "name": "Avito Immobilier",
+   "adType": "all",
+   "searchSlug": "immobilier",
+   "tracking": "avito_immobilier",
+   "children": [
+    {
+     "id": "1200",
+     "name": "Ventes Immobilières",
+     "adType": "sell",
+     "searchSlug": "ventes_immobilieres-à_vendre",
+     "tracking": "ventes_immobilieres",
+     "children": [
+      {
+       "id": "1010",
+       "name": "Appartement à vendre",
+       "adType": "sell",
+       "searchSlug": "appartements-à_vendre",
+       "tracking": "appartement_a_vendre"
+      },
+      {
+       "id": "1020",
+       "name": "Maisons à vendre",
+       "adType": "sell",
+       "searchSlug": "maisons-à_vendre",
+       "tracking": "maisons_a_vendre"
+      },
+      {
+       "id": "1040",
+       "name": "Villas-Riad à vendre",
+       "adType": "sell",
+       "searchSlug": "villas_riad-à_vendre",
+       "tracking": "villas_riad_a_vendre"
+      },
+      {
+       "id": "1050",
+       "name": "Bureaux à vendre",
+       "adType": "sell",
+       "searchSlug": "bureaux_et_plateaux-à_vendre",
+       "tracking": "bureaux_a_vendre"
+      },
+      {
+       "id": "1060",
+       "name": "Local à vendre",
+       "adType": "sell",
+       "searchSlug": "magasins_et_commerces-à_vendre",
+       "tracking": "local_a_vendre"
+      },
+      {
+       "id": "1080",
+       "name": "Terrains et fermes à vendre",
+       "adType": "sell",
+       "searchSlug": "terrains_et_fermes-à_vendre",
+       "tracking": "terrains_a_vendre"
+      },
+      {
+       "id": "1090",
+       "name": "Autre Immobilier à vendre",
+       "adType": "sell",
+       "searchSlug": "autres_immobilier-à_vendre",
+       "tracking": "autre_immobilier_a_vendre"
+      }
+     ]
+    },
+    {
+     "id": "1300",
+     "name": "Locations Immobilières",
+     "adType": "let",
+     "searchSlug": "locations_immobilieres-à_louer",
+     "tracking": "locations_immobilieres",
+     "children": [
+      {
+       "id": "1010",
+       "name": "Appartement à louer",
+       "adType": "let",
+       "searchSlug": "appartements-à_louer",
+       "tracking": "appartement_a_louer"
+      },
+      {
+       "id": "1020",
+       "name": "Maisons à louer",
+       "adType": "let",
+       "searchSlug": "maisons-à_louer",
+       "tracking": "maisons_a_louer"
+      },
+      {
+       "id": "1040",
+       "name": "Villas-Riad à louer",
+       "adType": "let",
+       "searchSlug": "villas_riad-à_louer",
+       "tracking": "villas_riad_a_louer"
+      },
+      {
+       "id": "1050",
+       "name": "Bureaux à louer",
+       "adType": "let",
+       "searchSlug": "bureaux_et_plateaux-à_louer",
+       "tracking": "bureaux_a_louer"
+      },
+      {
+       "id": "1060",
+       "name": "Local à louer",
+       "adType": "let",
+       "searchSlug": "magasins_et_commerces-à_louer",
+       "tracking": "local_a_louer"
+      },
+      {
+       "id": "1080",
+       "name": "Terrains et fermes à louer",
+       "adType": "let",
+       "searchSlug": "terrains_et_fermes-à_louer",
+       "tracking": "terrains_a_louer"
+      },
+      {
+       "id": "1090",
+       "name": "Autre Immobilier à louer",
+       "adType": "let",
+       "searchSlug": "autres_immobilier-à_louer",
+       "tracking": "autre_immobilier_a_louer"
+      }
+     ]
+    },
+    {
+     "id": "1400",
+     "name": "Colocations Immobilières",
+     "adType": "co_rent",
+     "searchSlug": "colocations-colocation",
+     "tracking": "colocations_immobilieres",
+     "children": [
+      {
+       "id": "1010",
+       "name": "Appartement colocation",
+       "adType": "co_rent",
+       "searchSlug": "appartement_colocation-colocation",
+       "tracking": "appartement_colocation"
+      },
+      {
+       "id": "1020",
+       "name": "Maisons colocation",
+       "adType": "co_rent",
+       "searchSlug": "maisons_colocation-colocation",
+       "tracking": "maisons_colocation"
+      },
+      {
+       "id": "1040",
+       "name": "Villas-Riad colocation",
+       "adType": "co_rent",
+       "searchSlug": "villas_riad_colocation-colocation",
+       "tracking": "villas_riad_colocation"
+      }
+     ]
+    },
+    {
+     "id": "1500",
+     "name": "Location de Vacances - Journalière",
+     "adType": "vac_rent",
+     "searchSlug": "locations_de_vacances-location_de_vacances",
+     "tracking": "location_de_vacances_journaliere",
+     "children": [
+      {
+       "id": "1010",
+       "name": "Appartement location de vacances",
+       "adType": "vac_rent",
+       "searchSlug": "appartement_location_de_vacances-location_de_vacances",
+       "tracking": "appartement_location_de_vacances"
+      },
+      {
+       "id": "1020",
+       "name": "Maison location de vacances",
+       "adType": "vac_rent",
+       "searchSlug": "maisons_location_de_vacances-location_de_vacances",
+       "tracking": "maisons_location_de_vacances"
+      },
+      {
+       "id": "1040",
+       "name": "Villas-Riad location de vacances",
+       "adType": "vac_rent",
+       "searchSlug": "villas_riad_location_de_vacances-location_de_vacances",
+       "tracking": "villas_riad_location_de_vacances"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6000",
+   "name": "Avito Entreprise",
+   "adType": "all",
+   "searchSlug": "entreprises",
+   "tracking": "avito_entreprise",
+   "children": [
+    {
+     "id": "6200",
+     "name": "Emploi",
+     "adType": "all",
+     "searchSlug": "emploi",
+     "tracking": "emploi",
+     "children": [
+      {
+       "id": "6050",
+       "name": "Centre d'appels",
+       "adType": "all",
+       "searchSlug": "centre_appels",
+       "tracking": "centre_d_appels"
+      },
+      {
+       "id": "6080",
+       "name": "Cadres",
+       "adType": "all",
+       "searchSlug": "offres_emploi_cadres",
+       "tracking": "cadres"
+      },
+      {
+       "id": "6140",
+       "name": "Métiers IT",
+       "adType": "all",
+       "searchSlug": "metiers_it",
+       "tracking": "metiers_it"
+      },
+      {
+       "id": "6011",
+       "name": "Administratif",
+       "adType": "all",
+       "searchSlug": "administratifs",
+       "tracking": "administratif"
+      },
+      {
+       "id": "6012",
+       "name": "Commercial",
+       "adType": "all",
+       "searchSlug": "commercial",
+       "tracking": "commercial"
+      },
+      {
+       "id": "6010",
+       "name": "Autres Emploi",
+       "adType": "all",
+       "searchSlug": "autres_emploi",
+       "tracking": "autres_emploi"
+      }
+     ]
+    },
+    {
+     "id": "6300",
+     "name": "Services",
+     "adType": "all",
+     "searchSlug": "services",
+     "tracking": "services",
+     "children": [
+      {
+       "id": "6060",
+       "name": "Femmes de ménage, Nounous",
+       "adType": "all",
+       "searchSlug": "femmes_de_menage_nounous",
+       "tracking": "femmes_de_ménage_nounous"
+      },
+      {
+       "id": "6031",
+       "name": "Gardiennage et Sécurité",
+       "adType": "all",
+       "searchSlug": "gardiennage_et_securite",
+       "tracking": "gardiennage_et_sécurité"
+      },
+      {
+       "id": "6070",
+       "name": "Rénovation, Bricolage, Travaux de maison et jardin",
+       "adType": "all",
+       "searchSlug": "renovation_bricolage_travaux_de_maison_et_jardin",
+       "tracking": "rénovation_bricolage_travaux_de_maison_et_jardin"
+      },
+      {
+       "id": "6032",
+       "name": "Chauffeur, Déménagement, Transport de marchandise",
+       "adType": "all",
+       "searchSlug": "chauffeur_demenagement_transport_de_marchandise",
+       "tracking": "chauffeur_déménagement_transport_de_marchandise"
+      },
+      {
+       "id": "6033",
+       "name": "Cuisinières, Serveur, Barman",
+       "adType": "all",
+       "searchSlug": "cuisinieres_serveur_barman",
+       "tracking": "cuisinières_serveur_barman"
+      },
+      {
+       "id": "6034",
+       "name": "Coiffure et Esthétique",
+       "adType": "all",
+       "searchSlug": "coiffure_et_esthetique",
+       "tracking": "coiffure_et_esthétique"
+      },
+      {
+       "id": "6035",
+       "name": "Infirmier et Kinésithérapeute",
+       "adType": "all",
+       "searchSlug": "infirmier_et_kinesitherapeute",
+       "tracking": "infirmier_et_kinésithérapeute"
+      },
+      {
+       "id": "6036",
+       "name": "Services Informatique et réparation",
+       "adType": "all",
+       "searchSlug": "services_informatique_et_reparation",
+       "tracking": "services_informatique_et_réparation"
+      },
+      {
+       "id": "6037",
+       "name": "Services Administratif, Financier, Juridique",
+       "adType": "all",
+       "searchSlug": "services_administratif_financier_juridique",
+       "tracking": "services_administratif_financier_juridique"
+      },
+      {
+       "id": "6030",
+       "name": "Autres Services",
+       "adType": "all",
+       "searchSlug": "autres_services",
+       "tracking": "autres_services"
+      }
+     ]
+    },
+    {
+     "id": "6400",
+     "name": "Stages, Cours et Formations",
+     "adType": "all",
+     "searchSlug": "stages_cours_et_formations",
+     "tracking": "stages_cours_et_formations",
+     "children": [
+      {
+       "id": "6040",
+       "name": "Cours et Formations",
+       "adType": "all",
+       "searchSlug": "cours_et_formations",
+       "tracking": "cours_et_formations"
+      },
+      {
+       "id": "6130",
+       "name": "Stages",
+       "adType": "all",
+       "searchSlug": "stages",
+       "tracking": "stages"
+      },
+      {
+       "id": "6131",
+       "name": "Location de salle de formation",
+       "adType": "all",
+       "searchSlug": "location_de_salle_de_formation",
+       "tracking": "location_de_salle_de_formation"
+      }
+     ]
+    },
+    {
+     "id": "6100",
+     "name": "Business et affaire commerciale",
+     "adType": "all",
+     "searchSlug": "business_et_affaire_commerciale",
+     "tracking": "business_et_affaire_commerciale"
+    },
+    {
+     "id": "6500",
+     "name": "Évènements",
+     "adType": "all",
+     "searchSlug": "evenements",
+     "tracking": "evenements",
+     "children": [
+      {
+       "id": "6510",
+       "name": "Animation",
+       "adType": "all",
+       "searchSlug": "animation",
+       "tracking": "animation"
+      },
+      {
+       "id": "6520",
+       "name": "Traiteur",
+       "adType": "all",
+       "searchSlug": "traiteur",
+       "tracking": "traiteur"
+      },
+      {
+       "id": "6530",
+       "name": "Conférences",
+       "adType": "all",
+       "searchSlug": "conferences",
+       "tracking": "conferences"
+      },
+      {
+       "id": "6590",
+       "name": "Autres évènements",
+       "adType": "all",
+       "searchSlug": "autres_evenements",
+       "tracking": "autres_evenements"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "byId": {
+  "1000": {
+   "id": "1000",
+   "name": "Avito Immobilier",
+   "adType": "all",
+   "parent": null,
+   "searchSlug": "immobilier"
+  },
+  "1010": {
+   "id": "1010",
+   "name": "Appartement location de vacances",
+   "adType": "vac_rent",
+   "parent": "1500",
+   "searchSlug": "appartement_location_de_vacances-location_de_vacances"
+  },
+  "1020": {
+   "id": "1020",
+   "name": "Maison location de vacances",
+   "adType": "vac_rent",
+   "parent": "1500",
+   "searchSlug": "maisons_location_de_vacances-location_de_vacances"
+  },
+  "1040": {
+   "id": "1040",
+   "name": "Villas-Riad location de vacances",
+   "adType": "vac_rent",
+   "parent": "1500",
+   "searchSlug": "villas_riad_location_de_vacances-location_de_vacances"
+  },
+  "1050": {
+   "id": "1050",
+   "name": "Bureaux à louer",
+   "adType": "let",
+   "parent": "1300",
+   "searchSlug": "bureaux_et_plateaux-à_louer"
+  },
+  "1060": {
+   "id": "1060",
+   "name": "Local à louer",
+   "adType": "let",
+   "parent": "1300",
+   "searchSlug": "magasins_et_commerces-à_louer"
+  },
+  "1080": {
+   "id": "1080",
+   "name": "Terrains et fermes à louer",
+   "adType": "let",
+   "parent": "1300",
+   "searchSlug": "terrains_et_fermes-à_louer"
+  },
+  "1090": {
+   "id": "1090",
+   "name": "Autre Immobilier à louer",
+   "adType": "let",
+   "parent": "1300",
+   "searchSlug": "autres_immobilier-à_louer"
+  },
+  "1200": {
+   "id": "1200",
+   "name": "Ventes Immobilières",
+   "adType": "sell",
+   "parent": "1000",
+   "searchSlug": "ventes_immobilieres-à_vendre"
+  },
+  "1300": {
+   "id": "1300",
+   "name": "Locations Immobilières",
+   "adType": "let",
+   "parent": "1000",
+   "searchSlug": "locations_immobilieres-à_louer"
+  },
+  "1400": {
+   "id": "1400",
+   "name": "Colocations Immobilières",
+   "adType": "co_rent",
+   "parent": "1000",
+   "searchSlug": "colocations-colocation"
+  },
+  "1500": {
+   "id": "1500",
+   "name": "Location de Vacances - Journalière",
+   "adType": "vac_rent",
+   "parent": "1000",
+   "searchSlug": "locations_de_vacances-location_de_vacances"
+  },
+  "2000": {
+   "id": "2000",
+   "name": "Avito Véhicules",
+   "adType": "all",
+   "parent": null,
+   "searchSlug": "véhicules"
+  },
+  "2010": {
+   "id": "2010",
+   "name": "Voitures d'occasion",
+   "adType": "sell",
+   "parent": "2100",
+   "searchSlug": "voitures_d_occasion-à_vendre"
+  },
+  "2020": {
+   "id": "2020",
+   "name": "Voitures de location",
+   "adType": "let",
+   "parent": "2100",
+   "searchSlug": "location_de_voitures-à_louer"
+  },
+  "2025": {
+   "id": "2025",
+   "name": "Voitures de Leasing",
+   "adType": "let",
+   "parent": "2100",
+   "searchSlug": "voitures_de_leasing-à_louer"
+  },
+  "2030": {
+   "id": "2030",
+   "name": "Motos",
+   "adType": "sell",
+   "parent": "2000",
+   "searchSlug": "motos-à_vendre"
+  },
+  "2040": {
+   "id": "2040",
+   "name": "Pièces et accessoires pour véhicules",
+   "adType": "sell",
+   "parent": "2000",
+   "searchSlug": "pièces_et_accessoires_véhicules-à_vendre"
+  },
+  "2050": {
+   "id": "2050",
+   "name": "Bateaux",
+   "adType": "sell",
+   "parent": "2000",
+   "searchSlug": "bateaux-à_vendre"
+  },
+  "2060": {
+   "id": "2060",
+   "name": "Vélos",
+   "adType": "sell",
+   "parent": "2000",
+   "searchSlug": "vélos-à_vendre"
+  },
+  "2070": {
+   "id": "2070",
+   "name": "Camions et Engins",
+   "adType": "all",
+   "parent": "2000",
+   "searchSlug": "camions_et_engins"
+  },
+  "2071": {
+   "id": "2071",
+   "name": "Fourgon et Minibus",
+   "adType": "all",
+   "parent": "2070",
+   "searchSlug": "fourgon_et_minibus"
+  },
+  "2072": {
+   "id": "2072",
+   "name": "Remorques et caravanes",
+   "adType": "all",
+   "parent": "2070",
+   "searchSlug": "remorques_et_caravans"
+  },
+  "2073": {
+   "id": "2073",
+   "name": "Engins agricoles",
+   "adType": "all",
+   "parent": "2070",
+   "searchSlug": "engins_agricole"
+  },
+  "2074": {
+   "id": "2074",
+   "name": "Véhicules Frigorifiques",
+   "adType": "all",
+   "parent": "2070",
+   "searchSlug": "vehicules_frigorifiques"
+  },
+  "2075": {
+   "id": "2075",
+   "name": "Engins BTP",
+   "adType": "all",
+   "parent": "2070",
+   "searchSlug": "engins_btp"
+  },
+  "2078": {
+   "id": "2078",
+   "name": "Camions",
+   "adType": "all",
+   "parent": "2070",
+   "searchSlug": "camions"
+  },
+  "2081": {
+   "id": "2081",
+   "name": "Autres véhicules",
+   "adType": "sell",
+   "parent": "2000",
+   "searchSlug": "véhicules_autres-à_vendre"
+  },
+  "2100": {
+   "id": "2100",
+   "name": "Voitures",
+   "adType": "all",
+   "parent": "2000",
+   "searchSlug": "voitures"
+  },
+  "3000": {
+   "id": "3000",
+   "name": "Maison et Jardin",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "pour_la_maision_et_jardin-à_vendre"
+  },
+  "3011": {
+   "id": "3011",
+   "name": "Petit Electroménager",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "petit_electromenager-à_vendre"
+  },
+  "3012": {
+   "id": "3012",
+   "name": "Grand Electroménager",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "grand_electromenager-à_vendre"
+  },
+  "3013": {
+   "id": "3013",
+   "name": "Confort de la maison",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "confort_de_la_maison-à_vendre"
+  },
+  "3014": {
+   "id": "3014",
+   "name": "Vaisselles",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "vaisselles-à_vendre"
+  },
+  "3021": {
+   "id": "3021",
+   "name": "Meuble",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "meubles-à_vendre"
+  },
+  "3022": {
+   "id": "3022",
+   "name": "Décoration ",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "decoration-à_vendre"
+  },
+  "3023": {
+   "id": "3023",
+   "name": "Textile",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "textile-à_vendre"
+  },
+  "3024": {
+   "id": "3024",
+   "name": "Tapis",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "tapis-à_vendre"
+  },
+  "3025": {
+   "id": "3025",
+   "name": "Porte et Fenêtre",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "porte_et_fenetre-à_vendre"
+  },
+  "3030": {
+   "id": "3030",
+   "name": "Vêtements pour enfant et bébé",
+   "adType": "sell",
+   "parent": "8000",
+   "searchSlug": "vetements_pour_enfant-à_vendre"
+  },
+  "3041": {
+   "id": "3041",
+   "name": "Jardin",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "jardin-à_vendre"
+  },
+  "3042": {
+   "id": "3042",
+   "name": "Bricolage",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "bricolage-à_vendre"
+  },
+  "3043": {
+   "id": "3043",
+   "name": "Sanitaire",
+   "adType": "sell",
+   "parent": "3000",
+   "searchSlug": "sanitaire-à_vendre"
+  },
+  "3050": {
+   "id": "3050",
+   "name": "Vêtements",
+   "adType": "sell",
+   "parent": "8000",
+   "searchSlug": "vetements-à_vendre"
+  },
+  "3060": {
+   "id": "3060",
+   "name": "Sacs et accessoires",
+   "adType": "sell",
+   "parent": "8000",
+   "searchSlug": "sacs_et_accessoires-à_vendre"
+  },
+  "3070": {
+   "id": "3070",
+   "name": "Produits de beauté",
+   "adType": "sell",
+   "parent": "3900",
+   "searchSlug": "produits_de_beaute-à_vendre"
+  },
+  "3130": {
+   "id": "3130",
+   "name": "Equipement pour Bébé et Enfant",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "equipements_pour_enfant-à_vendre"
+  },
+  "3131": {
+   "id": "3131",
+   "name": "Promenade",
+   "adType": "sell",
+   "parent": "3130",
+   "searchSlug": "promenade-à_vendre"
+  },
+  "3132": {
+   "id": "3132",
+   "name": "Chambre",
+   "adType": "sell",
+   "parent": "3130",
+   "searchSlug": "chambre-à_vendre"
+  },
+  "3133": {
+   "id": "3133",
+   "name": "Accessoires Repas",
+   "adType": "sell",
+   "parent": "3130",
+   "searchSlug": "accessoires_repas-à_vendre"
+  },
+  "3134": {
+   "id": "3134",
+   "name": "Jouets",
+   "adType": "sell",
+   "parent": "3130",
+   "searchSlug": "jouets-à_vendre"
+  },
+  "3135": {
+   "id": "3135",
+   "name": "Bain",
+   "adType": "sell",
+   "parent": "3130",
+   "searchSlug": "bain-à_vendre"
+  },
+  "3139": {
+   "id": "3139",
+   "name": "Autre équipement pour Bébé et Enfant",
+   "adType": "sell",
+   "parent": "3130",
+   "searchSlug": "autre_equipement_pour_bebe_et_enfant-à_vendre"
+  },
+  "3150": {
+   "id": "3150",
+   "name": "Chaussures",
+   "adType": "sell",
+   "parent": "8000",
+   "searchSlug": "chaussures-à_vendre"
+  },
+  "3160": {
+   "id": "3160",
+   "name": "Montres et bijoux",
+   "adType": "sell",
+   "parent": "8000",
+   "searchSlug": "montres_et_bijoux-à_vendre"
+  },
+  "3190": {
+   "id": "3190",
+   "name": "Autres accessoires de mode",
+   "adType": "sell",
+   "parent": "8000",
+   "searchSlug": "autres_accessoires_de_mode-à_vendre"
+  },
+  "3900": {
+   "id": "3900",
+   "name": "Bien être et Sport",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "bien_etre_et_sport-à_vendre"
+  },
+  "3901": {
+   "id": "3901",
+   "name": "Produits de terroir",
+   "adType": "sell",
+   "parent": "3900",
+   "searchSlug": "produits_de_terroir-à_vendre"
+  },
+  "3902": {
+   "id": "3902",
+   "name": "Complément Alimentaires",
+   "adType": "sell",
+   "parent": "3900",
+   "searchSlug": "complement_alimentaires-à_vendre"
+  },
+  "3903": {
+   "id": "3903",
+   "name": "Alimentation Générale",
+   "adType": "sell",
+   "parent": "3900",
+   "searchSlug": "alimentation_generale-à_vendre"
+  },
+  "4000": {
+   "id": "4000",
+   "name": "Loisirs et Divertissements",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "loisirs_et_divertissement-à_vendre"
+  },
+  "4010": {
+   "id": "4010",
+   "name": "Equipement Sportif",
+   "adType": "sell",
+   "parent": "3900",
+   "searchSlug": "sports_et_loisirs-à_vendre"
+  },
+  "4030": {
+   "id": "4030",
+   "name": "Animalerie",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "animaux-à_vendre"
+  },
+  "4031": {
+   "id": "4031",
+   "name": "Animaux Domestique",
+   "adType": "sell",
+   "parent": "4030",
+   "searchSlug": "animaux_domestique-à_vendre"
+  },
+  "4032": {
+   "id": "4032",
+   "name": "Animaux De Ferme",
+   "adType": "sell",
+   "parent": "4030",
+   "searchSlug": "animaux_de_ferme-à_vendre"
+  },
+  "4033": {
+   "id": "4033",
+   "name": "Services pour animaux",
+   "adType": "sell",
+   "parent": "4030",
+   "searchSlug": "services_pour_animaux-à_vendre"
+  },
+  "4034": {
+   "id": "4034",
+   "name": "Accessoires pour animaux",
+   "adType": "sell",
+   "parent": "4030",
+   "searchSlug": "accessoires_pour_animaux-à_vendre"
+  },
+  "4035": {
+   "id": "4035",
+   "name": "Alimentation pour animaux",
+   "adType": "sell",
+   "parent": "4030",
+   "searchSlug": "alimentation_pour_animaux-à_vendre"
+  },
+  "4040": {
+   "id": "4040",
+   "name": "Films, livres, magazines",
+   "adType": "sell",
+   "parent": "4000",
+   "searchSlug": "films_livres_magazines-à_vendre"
+  },
+  "4050": {
+   "id": "4050",
+   "name": "Voyages et billetterie",
+   "adType": "sell",
+   "parent": "4000",
+   "searchSlug": "voyage_et_billetterie-à_vendre"
+  },
+  "4060": {
+   "id": "4060",
+   "name": "Arts et collections",
+   "adType": "sell",
+   "parent": "4000",
+   "searchSlug": "art_et_collections-à_vendre"
+  },
+  "4065": {
+   "id": "4065",
+   "name": "Couture, Crochet, Tricottage",
+   "adType": "sell",
+   "parent": "4000",
+   "searchSlug": "couture_crochet_tricottage-à_vendre"
+  },
+  "4070": {
+   "id": "4070",
+   "name": "Instruments de musique",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "instruments_de_musique-à_vendre"
+  },
+  "4071": {
+   "id": "4071",
+   "name": "Cordes",
+   "adType": "sell",
+   "parent": "4070",
+   "searchSlug": "cordes-à_vendre"
+  },
+  "4072": {
+   "id": "4072",
+   "name": "Piano",
+   "adType": "sell",
+   "parent": "4070",
+   "searchSlug": "piano-à_vendre"
+  },
+  "4073": {
+   "id": "4073",
+   "name": "Vent",
+   "adType": "sell",
+   "parent": "4070",
+   "searchSlug": "vent-à_vendre"
+  },
+  "4074": {
+   "id": "4074",
+   "name": "Percussions",
+   "adType": "sell",
+   "parent": "4070",
+   "searchSlug": "percussions-à_vendre"
+  },
+  "4075": {
+   "id": "4075",
+   "name": "Accessoires",
+   "adType": "sell",
+   "parent": "4070",
+   "searchSlug": "accessoires-à_vendre"
+  },
+  "4079": {
+   "id": "4079",
+   "name": "Autres instruments",
+   "adType": "sell",
+   "parent": "4070",
+   "searchSlug": "autres_instruments-à_vendre"
+  },
+  "4095": {
+   "id": "4095",
+   "name": "Autres loisirs",
+   "adType": "sell",
+   "parent": "4000",
+   "searchSlug": "autres_loisirs-à_vendre"
+  },
+  "5000": {
+   "id": "5000",
+   "name": "Informatique, Multimedia et Gadgets",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "informatique_et_multimedia-à_vendre"
+  },
+  "5010": {
+   "id": "5010",
+   "name": "Smartphone et Téléphone",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "téléphones-à_vendre"
+  },
+  "5020": {
+   "id": "5020",
+   "name": "Audio et Hi-Fi",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "image_et_son-à_vendre"
+  },
+  "5030": {
+   "id": "5030",
+   "name": "Ordinateurs portables",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "ordinateurs_portables-à_vendre"
+  },
+  "5040": {
+   "id": "5040",
+   "name": "Gaming",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "jeux_vidéo_et_consoles-à_vendre"
+  },
+  "5050": {
+   "id": "5050",
+   "name": "Ordinateurs de bureau",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "ordinateurs_bureau-à_vendre"
+  },
+  "5060": {
+   "id": "5060",
+   "name": "Accessoires Informatiques",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "accessoires_informatique_et_gadgets-à_vendre"
+  },
+  "5070": {
+   "id": "5070",
+   "name": "Photo-Video",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "appareils_photo_cameras-à_vendre"
+  },
+  "5080": {
+   "id": "5080",
+   "name": "Tablettes et  E-book",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "tablettes-à_vendre"
+  },
+  "5090": {
+   "id": "5090",
+   "name": "Télévisions",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "télévisions-à_vendre"
+  },
+  "5091": {
+   "id": "5091",
+   "name": "Gadgets",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "gadgets-à_vendre"
+  },
+  "5092": {
+   "id": "5092",
+   "name": "Comptes et Abonnements",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "comptes_et_abonnements-à_vendre"
+  },
+  "5093": {
+   "id": "5093",
+   "name": "Imprimantes",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "imprimantes-à_vendre"
+  },
+  "5095": {
+   "id": "5095",
+   "name": "Autres Matériels Electroniques",
+   "adType": "sell",
+   "parent": "5000",
+   "searchSlug": "autres_materiels_electroniques-à_vendre"
+  },
+  "6000": {
+   "id": "6000",
+   "name": "Avito Entreprise",
+   "adType": "all",
+   "parent": null,
+   "searchSlug": "entreprises"
+  },
+  "6010": {
+   "id": "6010",
+   "name": "Autres Emploi",
+   "adType": "all",
+   "parent": "6200",
+   "searchSlug": "autres_emploi"
+  },
+  "6011": {
+   "id": "6011",
+   "name": "Administratif",
+   "adType": "all",
+   "parent": "6200",
+   "searchSlug": "administratifs"
+  },
+  "6012": {
+   "id": "6012",
+   "name": "Commercial",
+   "adType": "all",
+   "parent": "6200",
+   "searchSlug": "commercial"
+  },
+  "6030": {
+   "id": "6030",
+   "name": "Autres Services",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "autres_services"
+  },
+  "6031": {
+   "id": "6031",
+   "name": "Gardiennage et Sécurité",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "gardiennage_et_securite"
+  },
+  "6032": {
+   "id": "6032",
+   "name": "Chauffeur, Déménagement, Transport de marchandise",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "chauffeur_demenagement_transport_de_marchandise"
+  },
+  "6033": {
+   "id": "6033",
+   "name": "Cuisinières, Serveur, Barman",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "cuisinieres_serveur_barman"
+  },
+  "6034": {
+   "id": "6034",
+   "name": "Coiffure et Esthétique",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "coiffure_et_esthetique"
+  },
+  "6035": {
+   "id": "6035",
+   "name": "Infirmier et Kinésithérapeute",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "infirmier_et_kinesitherapeute"
+  },
+  "6036": {
+   "id": "6036",
+   "name": "Services Informatique et réparation",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "services_informatique_et_reparation"
+  },
+  "6037": {
+   "id": "6037",
+   "name": "Services Administratif, Financier, Juridique",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "services_administratif_financier_juridique"
+  },
+  "6040": {
+   "id": "6040",
+   "name": "Cours et Formations",
+   "adType": "all",
+   "parent": "6400",
+   "searchSlug": "cours_et_formations"
+  },
+  "6050": {
+   "id": "6050",
+   "name": "Centre d'appels",
+   "adType": "all",
+   "parent": "6200",
+   "searchSlug": "centre_appels"
+  },
+  "6060": {
+   "id": "6060",
+   "name": "Femmes de ménage, Nounous",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "femmes_de_menage_nounous"
+  },
+  "6070": {
+   "id": "6070",
+   "name": "Rénovation, Bricolage, Travaux de maison et jardin",
+   "adType": "all",
+   "parent": "6300",
+   "searchSlug": "renovation_bricolage_travaux_de_maison_et_jardin"
+  },
+  "6080": {
+   "id": "6080",
+   "name": "Cadres",
+   "adType": "all",
+   "parent": "6200",
+   "searchSlug": "offres_emploi_cadres"
+  },
+  "6090": {
+   "id": "6090",
+   "name": "Matériels Professionnels",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "matériels_professionnels-à_vendre"
+  },
+  "6091": {
+   "id": "6091",
+   "name": "Matériel de Bureau",
+   "adType": "sell",
+   "parent": "6090",
+   "searchSlug": "materiel_de_bureau-à_vendre"
+  },
+  "6092": {
+   "id": "6092",
+   "name": "Restauration et Hôtellerie",
+   "adType": "sell",
+   "parent": "6090",
+   "searchSlug": "restauration_et_hotellerie-à_vendre"
+  },
+  "6093": {
+   "id": "6093",
+   "name": "Matériel et Matière BTP",
+   "adType": "sell",
+   "parent": "6090",
+   "searchSlug": "materiel_et_matiere_btp-à_vendre"
+  },
+  "6094": {
+   "id": "6094",
+   "name": "Matériel Médical",
+   "adType": "sell",
+   "parent": "6090",
+   "searchSlug": "materiel_medical-à_vendre"
+  },
+  "6095": {
+   "id": "6095",
+   "name": "Matériel Agricole",
+   "adType": "sell",
+   "parent": "6090",
+   "searchSlug": "materiel_agricole-à_vendre"
+  },
+  "6096": {
+   "id": "6096",
+   "name": "Matériel pour école, garderie et espace de jeux",
+   "adType": "sell",
+   "parent": "6090",
+   "searchSlug": "materiel_pour_ecole_garderie_et_espace_de_jeux-à_vendre"
+  },
+  "6099": {
+   "id": "6099",
+   "name": "Autre Matériel professionel",
+   "adType": "sell",
+   "parent": "6090",
+   "searchSlug": "autre_materiel_professionel-à_vendre"
+  },
+  "6100": {
+   "id": "6100",
+   "name": "Business et affaire commerciale",
+   "adType": "all",
+   "parent": "6000",
+   "searchSlug": "business_et_affaire_commerciale"
+  },
+  "6120": {
+   "id": "6120",
+   "name": "Stocks et vente en gros",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "stocks_et_vente_en_gros-à_vendre"
+  },
+  "6130": {
+   "id": "6130",
+   "name": "Stages",
+   "adType": "all",
+   "parent": "6400",
+   "searchSlug": "stages"
+  },
+  "6131": {
+   "id": "6131",
+   "name": "Location de salle de formation",
+   "adType": "all",
+   "parent": "6400",
+   "searchSlug": "location_de_salle_de_formation"
+  },
+  "6140": {
+   "id": "6140",
+   "name": "Métiers IT",
+   "adType": "all",
+   "parent": "6200",
+   "searchSlug": "metiers_it"
+  },
+  "6200": {
+   "id": "6200",
+   "name": "Emploi",
+   "adType": "all",
+   "parent": "6000",
+   "searchSlug": "emploi"
+  },
+  "6300": {
+   "id": "6300",
+   "name": "Services",
+   "adType": "all",
+   "parent": "6000",
+   "searchSlug": "services"
+  },
+  "6400": {
+   "id": "6400",
+   "name": "Stages, Cours et Formations",
+   "adType": "all",
+   "parent": "6000",
+   "searchSlug": "stages_cours_et_formations"
+  },
+  "6500": {
+   "id": "6500",
+   "name": "Évènements",
+   "adType": "all",
+   "parent": "6000",
+   "searchSlug": "evenements"
+  },
+  "6510": {
+   "id": "6510",
+   "name": "Animation",
+   "adType": "all",
+   "parent": "6500",
+   "searchSlug": "animation"
+  },
+  "6520": {
+   "id": "6520",
+   "name": "Traiteur",
+   "adType": "all",
+   "parent": "6500",
+   "searchSlug": "traiteur"
+  },
+  "6530": {
+   "id": "6530",
+   "name": "Conférences",
+   "adType": "all",
+   "parent": "6500",
+   "searchSlug": "conferences"
+  },
+  "6590": {
+   "id": "6590",
+   "name": "Autres évènements",
+   "adType": "all",
+   "parent": "6500",
+   "searchSlug": "autres_evenements"
+  },
+  "7100": {
+   "id": "7100",
+   "name": "Avito Market",
+   "adType": "all",
+   "parent": null,
+   "searchSlug": "market"
+  },
+  "7900": {
+   "id": "7900",
+   "name": "Enchères Publiques",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "enchères_publiques-à_vendre"
+  },
+  "7910": {
+   "id": "7910",
+   "name": "Véhicules",
+   "adType": "sell",
+   "parent": "7900",
+   "searchSlug": "enchères_publiques_véhicules-à_vendre"
+  },
+  "7920": {
+   "id": "7920",
+   "name": "Immobilier",
+   "adType": "sell",
+   "parent": "7900",
+   "searchSlug": "enchères_publiques_immobilier-à_vendre"
+  },
+  "7930": {
+   "id": "7930",
+   "name": "Divers",
+   "adType": "sell",
+   "parent": "7900",
+   "searchSlug": "enchères_publiques_divers-à_vendre"
+  },
+  "8000": {
+   "id": "8000",
+   "name": "Habillement et Mode",
+   "adType": "sell",
+   "parent": "7100",
+   "searchSlug": "habillement_et_bien_etre-à_vendre"
+  }
+ }
+}

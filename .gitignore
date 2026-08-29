@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Raw research scrapes (10MB+ dumps — regenerate, don't commit)
+/avito_*.json
+/data.json
+
+# Stray fetch artifacts from manual curl fallbacks
+/page.html
+*.html.tmp
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
