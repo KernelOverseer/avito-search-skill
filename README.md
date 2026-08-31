@@ -38,31 +38,57 @@ Total matching ads: 1,702 | fetched 1 page(s), 35 ads | showing 3
 
 ## Install
 
-### As an agent skill (ZCode)
+### As an agent skill (any harness)
+
+This is a standard [Agent Skills](https://code.claude.com/docs/en/skills) folder — `SKILL.md`
+with YAML frontmatter plus its scripts and data — so it installs into any harness that scans a
+skills directory. Clone it once, then symlink it into each harness's personal skills directory
+(symlinks keep it in sync with `git pull`; link the skill folder itself, not the skills root):
 
 ```bash
-git clone https://github.com/<you>/avito-search.git
-ln -s "$(pwd)/avito-search" ~/.zcode/skills/avito-search
+git clone https://github.com/KernelOverseer/avito-search-skill.git ~/skills/avito-search
 ```
 
-The symlink keeps the skill in sync with `git pull`. Alternatively, drop the folder into a
-project at `.zcode/skills/avito-search` for workspace-only availability.
+| Harness | Personal skills directory |
+|---|---|
+| Claude Code | `~/.claude/skills/` |
+| ZCode | `~/.zcode/skills/` |
+| OpenAI Codex CLI | `~/.codex/skills/` |
+| Google Gemini CLI | `~/.gemini/skills/` |
+| Cursor | `~/.cursor/skills/` |
+| Shared convention | `~/.agents/skills/` (read by ZCode, Codex CLI, Gemini CLI, Cursor) |
+
+For example, for Claude Code and ZCode:
+
+```bash
+ln -s ~/skills/avito-search ~/.claude/skills/avito-search
+ln -s ~/skills/avito-search ~/.zcode/skills/avito-search
+```
+
+Notes:
+
+- Claude Code [follows symlinks](https://code.claude.com/docs/en/skills) and hot-reloads skill
+  changes. For workspace-only availability, drop the folder (or a symlink) into the project at
+  `.<harness>/skills/avito-search` (e.g. `.claude/skills/`, `.zcode/skills/`).
+- Other harnesses (opencode, Zed, Goose, Amp, …) use XDG-style config directories
+  (`~/.config/<tool>/skills/`) — check your tool's docs and symlink the same way.
+- The skill itself is harness-agnostic: plain Python + `curl`, no ZCode-specific hooks. Only
+  python3 and curl are required.
 
 Once installed, just ask naturally — the skill triggers on requests like *"find a used Golf 7 in
 Rabat under 150k"*, *"what do iPhone 15s go for in Casablanca?"*, or *"2-bedroom apartments for
 rent in Agadir"*. The agent resolves categories, cities, and filters on its own.
 
-The SKILL.md format is plain Markdown with frontmatter, so the folder also drops into other
-agent CLIs that scan a skills directory. And since the scripts are self-contained, you can wire
-them into any agent (or cron job, or notebook) yourself — see below.
-
 ### Standalone (any shell)
 
 ```bash
-git clone https://github.com/<you>/avito-search.git
-cd avito-search
+git clone https://github.com/KernelOverseer/avito-search-skill.git
+cd avito-search-skill
 python3 scripts/lookup.py city casablanca
 ```
+
+Since the scripts are self-contained, you can also wire them into any agent, cron job, or
+notebook without the skill mechanism at all.
 
 ## Usage
 
