@@ -80,9 +80,12 @@ Two scripts do all the work. `lookup.py` is fully offline; only `search.py` hits
 
 ```console
 $ scripts/lookup.py brand cars volkswagen golf
-58  Volkswagen  (47 models)   -> ?brand=58
-     model: golf   Golf 1     -> &model=golf
-     model: golf2  Golf 2     -> &model=golf2
+58  Volkswagen  (47 models)
+     use: search.py ... -f brand=58 -f model=<slug>   (auto-combined)
+     model: golf  Golf 1
+            -> -f model=golf   (combined: brand_model=58_golf)
+     model: golf2  Golf 2
+            -> -f model=golf2   (combined: brand_model=58_golf2)
      ...
 
 $ scripts/lookup.py filters 5010 -p condition
@@ -111,7 +114,9 @@ Every subcommand accepts ids, French or English names, or slugs (accents optiona
 | `--ad-options` | csv of `has_price,has_image,hotdeal,urgent` (default `has_price`) |
 | `--include-unpriced` | don't force `ad_options=has_price` |
 | `-f KEY=VALUE` | any category-specific filter, repeatable (see `lookup.py filters`) |
-| `--pages N` | pages to fetch, 35 ads each, 3s pause between (rate-limit friendly) |
+| `--title-include REGEX` | client-side: keep ads whose subject matches (repeatable) |
+| `--title-exclude REGEX` | client-side: drop ads whose subject matches (repeatable) |
+| `--pages N` | pages to fetch (35–47 ads each by category), 3s pause between (rate-limit friendly) |
 | `--top N` | ads to show in text output (default 20) |
 | `--json` | full structured output: params, seller + phone, flags, loan estimate |
 | `--facets` | add live per-filter counts — great for suggesting refinements |
@@ -121,12 +126,24 @@ Every subcommand accepts ids, French or English names, or slugs (accents optiona
 # used cars in Rabat: specific model, several pages
 scripts/search.py --category voitures --city rabat -f brand=58 -f model=golf7 --pages 2
 
+# phones: brand+model (auto-combined into phone_brand_model — Avito ignores the separate
+# phone_model param), then trim "Pro Max" out of the results by title
+scripts/search.py --category telephones -f phone_brand=2 -f phone_model=apple_iphone_15_pro --title-exclude max
+
 # keyword across multiple cities, professionals only, structured output
 scripts/search.py --keyword "studio meuble" --city casablanca,rabat --seller-type pro --json --facets
 
 # cheap cars, any brand, bounded year and mileage via category filters
 scripts/search.py --category 2010 --price -80000 -f regdate=2015-2020 -f mileage_exact=0-150000
 ```
+
+Filter param names differ per category (`brand`/`model` for cars, `phone_brand`/`phone_model`
+for phones — `lookup.py filters <category>` lists them). Brand+model pairs passed via `-f` are
+combined automatically into the `brand_model`/`phone_brand_model` form the server honors, and
+the script validates requested filters against the fetched ads, warning on stderr when Avito
+appears to be ignoring one. `--title-*` filters run client-side on ad subjects — the standard
+tool for model disambiguation (`--title-exclude max` → 15 Pro, not Pro Max) and for signals that
+only exist in titles, like iPhone battery health (`--title-include 'batterie|🔋'`).
 
 In `--json` mode each ad carries: id, subject, price (+ old price and Avito's monthly loan
 estimate), location, city/area ids, relative date, category attributes (mileage, storage,
@@ -206,8 +223,11 @@ scripts/
   avito_common.py            shared fuzzy matching and catalog loading
 references/
   category_tree.json         138 categories: id, name, adType, searchSlug
+                             (note: ids repeat across ad types — e.g. 1010 = apartment
+                             sell/let/coloc/vac_rent; the scripts resolve via the tree)
   cities.json                500 cities + 1,527 sector areas
   filters_by_category.json   per-category filter enums (105 categories)
+  filters_vertical_union.json  convenience view: filters common to each vertical
   brands_cars.json           142 car brands / 1,242 models
   brands_phones.json         phone brands / models
   url_params.md              verified param semantics + pitfalls (deep dive)

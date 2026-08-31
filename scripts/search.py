@@ -8,8 +8,14 @@ embedded __NEXT_DATA__ JSON, and prints a concise listing (or full JSON).
 Examples:
   search.py --category telephones --keyword iphone --price 3000-8000 --city casablanca
   search.py --category voitures --city rabat -f brand=58 -f model=golf7 --pages 2
+  search.py --category telephones -f phone_brand=2 -f phone_model=apple_iphone_15_pro
+  search.py --keyword "iphone 15 pro" --title-exclude max --title-include 'batterie'
   search.py --keyword "studio meuble" --city "el jadida" --seller-type pro
   search.py --category 2010 --price -80000 -f regdate=2015-2020 --json
+
+Brand+model params passed via -f are auto-combined into brand_model/phone_brand_model
+(Avito ignores the separate model param for some categories). --title-* filters are
+client-side on the ad subject — increase --pages to compensate.
 
 Universal options: --keyword --category --city --sector --price --seller-type
 --ad-options --include-unpriced.  Category-specific filters (brand, fuel, rooms,
@@ -117,21 +123,61 @@ def build_url(a):
         params["ad_options"] = ",".join(ad_opts)
 
     known = None
-    if cat and a.filter:
-        entry = ac.category_filters(cat["id"])
+    if cat:
+        entry = ac.category_filters(cat)
         known = set((entry or {}).get("filters", {}).keys())
         for f in (entry or {}).get("filters", {}).values():
             if f.get("childrenKey"):
-                known.add(f["childrenKey"])  # e.g. model under brand
-        known |= {"category", "cities", "price", "seller_type", "ad_options", "o"}
+                known.add(f["childrenKey"])  # e.g. phone_model under phone_brand
+        known |= {"category", "cities", "price", "seller_type", "ad_options", "o",
+                  "brand_model", "phone_brand_model"}
+
+    raw_filters = []
     for f in a.filter or []:
         if "=" not in f:
             err(f"-f must be KEY=VALUE, got {f!r}", 2)
         k, v = f.split("=", 1)
         if known is not None and k not in known:
-            warn(f"filter {k!r} not in catalog for this category — sending anyway.")
+            warn(f"filter {k!r} not in catalog for this category — Avito ignores unknown "
+                 f"params; sending anyway.")
+        raw_filters.append((k, v))
+    fmap = dict(raw_filters)
+
+    # Avito silently ignores separate child model params for some categories (verified
+    # 2026-08-30: ignored for phones, working for cars) while the combined
+    # <brand>_model=<id>_<slug> form works everywhere tested. Auto-combine when possible.
+    pairs = (("brand", "model", "brand_model"),
+             ("phone_brand", "phone_model", "phone_brand_model"))
+    combined = None
+    for bp, mp, cp in pairs:
+        if bp in fmap and mp in fmap:
+            if "," in fmap[bp]:
+                warn(f"multi-value {bp} + {mp} kept separate (combined form needs a single brand id)")
+            else:
+                params[cp] = f"{fmap[bp]}_{fmap[mp]}"
+                combined = (bp, mp, cp)
+                warn(f"combined {bp}={fmap[bp]} + {mp}={fmap[mp]} into {cp}={params[cp]} "
+                     f"(separate {mp} is ignored by Avito for some categories)")
+            break
+    for bp, mp, cp in pairs:
+        if mp in fmap and bp not in fmap:
+            warn(f"{mp} without {bp}: a lone {mp} is ignored by Avito for some categories — "
+                 f"pass both so they can be combined into {cp}")
+
+    user_filters = {}
+    for k, v in raw_filters:
+        if combined and k in (combined[0], combined[1]):
+            continue
         params[k] = v
-    return path, params
+        user_filters[k] = v
+        if any(ch.isspace() for ch in v):
+            warn(f"filter value {k}={v!r} contains whitespace: Avito's own catalog uses "
+                 f"space-containing slugs for some models (e.g. 'rs 3'). Sent URL-encoded — "
+                 f"verified working 2026-08-30; if results look unfiltered, fall back to "
+                 f"--keyword + --title-include/--title-exclude.")
+    if combined:
+        user_filters[combined[2]] = params[combined[2]]
+    return path, params, user_filters
 
 
 def jina_fetch(url, timeout):
@@ -241,6 +287,52 @@ def facet_summary(cp):
     return out
 
 
+def validate_filters(category_query, user_filters, ads):
+    """Best-effort post-fetch check that requested enum filters actually applied.
+    Avito silently ignores some params; compare requested enum labels against the
+    ad params of the first fetched ads and warn on mismatch."""
+    if not category_query or not user_filters or not ads:
+        return
+    cat = ac.resolve_category(category_query)
+    entry = ac.category_filters(cat) if cat else None
+    if not entry:
+        return
+    sample = ads[:10]
+    for k, want in user_filters.items():
+        fdef = entry.get("filters", {}).get(k)
+        if not fdef or not fdef.get("values"):
+            continue  # not an enum param (range/free value) — nothing to compare
+        want_labels = []
+        for wv in str(want).split(","):
+            vdef = fdef["values"].get(wv.strip())
+            if vdef and vdef.get("label"):
+                want_labels.append(ac.norm(vdef["label"]).replace(" ", ""))
+        if not want_labels:
+            continue
+        flabel = fdef.get("label")
+        viol, compared = [], 0
+        for ad in sample:
+            got = (ad.get("params") or {}).get(flabel)
+            if got is None:
+                continue
+            compared += 1
+            g = ac.norm(got).replace(" ", "")
+            if not any(w == g or w in g or g in w for w in want_labels):
+                viol.append(got)
+        if compared >= 3 and len(viol) > 0.3 * compared:
+            warn(f"filter {k}={want} may be IGNORED by Avito: {len(viol)}/{compared} sampled "
+                 f"ads show {flabel} values other than requested — refine or drop the filter")
+
+
+def apply_title_filters(ads, includes, excludes):
+    """Client-side subject filtering (case-insensitive regex). Returns filtered list."""
+    inc = [re.compile(p, re.I) for p in includes]
+    exc = [re.compile(p, re.I) for p in excludes]
+    return [ad for ad in ads
+            if all(r.search(ad.get("subject") or "") for r in inc)
+            and not any(r.search(ad.get("subject") or "") for r in exc)]
+
+
 def fmt_price(ad):
     p = ad["price"]
     if not p:
@@ -251,17 +343,21 @@ def fmt_price(ad):
     return s
 
 
-def print_text(url, total, ads, shown, pages_fetched):
+def print_text(url, total, ads, shown, pages_fetched, ads_fetched, matched=None):
     print(f"Query: {url}")
-    print(f"Total matching ads: {total:,} | fetched {pages_fetched} page(s), {len(ads)} ads | showing {min(shown, len(ads))}")
+    line = f"Total matching ads: {total:,} | fetched {pages_fetched} page(s), {ads_fetched} ads"
+    if matched is not None:
+        line += f" | {matched} matched title filter"
+    line += f" | showing {min(shown, len(ads))}"
+    print(line)
     print()
     for i, ad in enumerate(ads[:shown], 1):
         flags = " ".join(f"[{f.upper()}]" for f in ad["flags"])
         seller = "PRO" if (ad["seller"]["type"] or "").upper() in ("STORE", "PRO") else "part."
         print(f"{i:>3}. {ad['subject']} — {fmt_price(ad)} — {ad['location'] or '?'} — {ad['date'] or '?'} — {seller} {flags}")
         print(f"     {ad['url']}")
-    if total > len(ads):
-        print(f"\n({total - len(ads):,} more ads not fetched — rerun with --pages N)")
+    if total > ads_fetched:
+        print(f"\n({total - ads_fetched:,} more ads not fetched — rerun with --pages N)")
 
 
 def main():
@@ -276,7 +372,11 @@ def main():
     p.add_argument("--include-unpriced", action="store_true", help="don't force ad_options=has_price")
     p.add_argument("-f", "--filter", action="append", default=[], metavar="KEY=VALUE",
                    help="category-specific filter param (see: lookup.py filters <category>)")
-    p.add_argument("--pages", type=int, default=1, help="pages to fetch (35 ads/page)")
+    p.add_argument("--title-include", action="append", default=[], metavar="REGEX",
+                   help="client-side: keep ads whose subject matches (repeatable, case-insensitive)")
+    p.add_argument("--title-exclude", action="append", default=[], metavar="REGEX",
+                   help="client-side: drop ads whose subject matches (repeatable, case-insensitive)")
+    p.add_argument("--pages", type=int, default=1, help="pages to fetch (35-47 ads/page by category)")
     p.add_argument("--top", type=int, default=20, help="ads to show in text output")
     p.add_argument("--json", action="store_true", help="full structured JSON output")
     p.add_argument("--facets", action="store_true", help="include facet counts in JSON output")
@@ -286,7 +386,7 @@ def main():
     p.add_argument("--dry-run", action="store_true", help="print the built URL and exit (no fetch)")
     a = p.parse_args()
 
-    path, params = build_url(a)
+    path, params, user_filters = build_url(a)
     url = BASE + path
     if params:
         url += "?" + urlencode(params, quote_via=quote)
@@ -322,16 +422,28 @@ def main():
             if key not in seen:
                 seen.add(key)
                 all_ads.append(ca)
+        if page == 1:
+            validate_filters(a.category, user_filters, all_ads)
     if total is None:
         total = len(all_ads)
 
+    ads_fetched, matched = len(all_ads), None
+    if a.title_include or a.title_exclude:
+        try:
+            all_ads = apply_title_filters(all_ads, a.title_include, a.title_exclude)
+        except re.error as e:
+            err(f"invalid --title-include/--title-exclude regex: {e}", 2)
+        matched = len(all_ads)
+
     if a.json:
         out = {"url": url, "total": total, "pages_fetched": fetched, "ads": all_ads}
+        if matched is not None:
+            out["ads_fetched"] = ads_fetched
         if a.facets:
             out["facets"] = facets
         print(json.dumps(out, ensure_ascii=False, indent=1))
     else:
-        print_text(url, total, all_ads, a.top, fetched)
+        print_text(url, total, all_ads, a.top, fetched, ads_fetched, matched)
 
 
 if __name__ == "__main__":

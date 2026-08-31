@@ -16,3 +16,6 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+
+# Local agent-session artifacts
+.zcode/

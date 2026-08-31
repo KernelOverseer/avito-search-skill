@@ -20,7 +20,8 @@ def slugify(s):
 
 
 def score(query, target):
-    """Fuzzy match score. 100 exact, 80 prefix, 60 word-start, 40 substring, 0 no match."""
+    """Fuzzy match score. 100 exact, 80 prefix, 60 word-start, 40 substring,
+    30 all-query-words-present (order-free, word-prefix), 0 no match."""
     nq, nt = norm(query), norm(target)
     if not nq or not nt:
         return 0
@@ -32,6 +33,9 @@ def score(query, target):
         return 60
     if nq in nt:
         return 40
+    words = nt.split()
+    if all(any(w.startswith(qw) for w in words) for qw in nq.split()):
+        return 30
     return 0
 
 
@@ -56,29 +60,55 @@ def load(name):
     return _cache[name]
 
 
+_flat_cache = None
+
+
+def flat_categories():
+    """All category entries flattened from the tree, with their parent-name paths.
+    The tree is the source of truth: ids repeat across ad types (1010 = apartment
+    sell/let/co_rent/vac_rent), so the file's byId map shadows all but one variant."""
+    global _flat_cache
+    if _flat_cache is None:
+        out = []
+
+        def walk(node, parents):
+            entry = {"id": node["id"], "name": node["name"],
+                     "searchSlug": node.get("searchSlug", ""),
+                     "adType": node.get("adType", ""), "path": " > ".join(parents + [node["name"]])}
+            out.append(entry)
+            for ch in node.get("children") or []:
+                walk(ch, parents + [node["name"]])
+
+        for vert in load("category_tree.json")["tree"]:
+            walk(vert, [])
+        _flat_cache = out
+    return _flat_cache
+
+
 def category_by_id(cat_id):
-    return load("category_tree.json")["byId"].get(str(cat_id))
+    matches = [e for e in flat_categories() if e["id"] == str(cat_id)]
+    return matches[0] if matches else None
+
+
+ADTYPE_ORDER = {"sell": 0, "let": 1, "co_rent": 2, "vac_rent": 3, "all": 4}
 
 
 def resolve_category(query):
     """Accepts a category id, exact/fuzzy name, or searchSlug.
-    Returns dict(id, name, searchSlug, adType, path) or None."""
-    by_id = load("category_tree.json")["byId"]
-    entry = by_id.get(str(query))
-    if entry is None:
-        matches = best_matches(query, list(by_id.values()),
-                               lambda e: f"{e['name']} {e.get('searchSlug', '')}")
-        entry = matches[0][0] if matches else None
-    if entry is None:
+    Returns dict(id, name, searchSlug, adType, path) or None. When several
+    ad-type variants tie (e.g. plain 'appartement'), sell is preferred."""
+    entries = flat_categories()
+    exact_id = [e for e in entries if e["id"] == str(query)]
+    if exact_id:
+        exact_id.sort(key=lambda e: ADTYPE_ORDER.get(e["adType"], 9))
+        return exact_id[0]
+    matches = best_matches(query, entries,
+                           lambda e: f"{e['name']} {e['searchSlug']}")
+    if not matches:
         return None
-    # full display path, e.g. "Véhicules > Voitures > Voitures d'occasion"
-    parts, cur = [], entry
-    while cur:
-        parts.append(cur["name"])
-        cur = by_id.get(cur.get("parent")) if cur.get("parent") else None
-    return {"id": entry["id"], "name": entry["name"],
-            "searchSlug": entry.get("searchSlug", ""), "adType": entry.get("adType", ""),
-            "path": " > ".join(reversed(parts))}
+    top = [m[0] for m in matches if m[1] == matches[0][1]]
+    top.sort(key=lambda e: (ADTYPE_ORDER.get(e["adType"], 9), len(e["name"])))
+    return top[0]
 
 
 def resolve_city(query):
@@ -105,16 +135,10 @@ def resolve_sector(city_entry, query):
     return slugify(query), None
 
 
-def category_filters(cat_id):
-    """Filter params dict for a category id (from filters_by_category.json), or None."""
-    slug = (category_by_id(cat_id) or {}).get("searchSlug")
+def category_filters(cat):
+    """Filter params dict for a resolved category entry (joined by searchSlug —
+    ids repeat across ad types, so they cannot join the two files safely), or None."""
+    slug = (cat or {}).get("searchSlug")
     if not slug:
         return None
-    cats = load("filters_by_category.json")["categories"]
-    entry = cats.get(slug)
-    if entry is None:  # slug keys in the file use the same string
-        for k, v in cats.items():
-            if v.get("categoryId") == str(cat_id):
-                entry = v
-                break
-    return entry
+    return load("filters_by_category.json")["categories"].get(slug)
